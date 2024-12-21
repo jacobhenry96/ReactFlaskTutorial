@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-const ContactForm = ({}) => {
+const ContactForm = ({ }) => {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -22,16 +22,16 @@ const ContactForm = ({}) => {
             body: JSON.stringify(data)
         }
         const response = await fetch(url, options)
-        if (response.status ==! 201 && response.status !== 200) {
-            const message = await response.json()
+        if (response.status !== 201 && response.status !== 200) {
+            const data = await response.json()
             alert(data.message)
         } else {
 
         }
     }
 
-    return <form>
-        <div onSubmit={onSubmit}>
+    return <form onSubmit={onSubmit}> 
+        <div>
             <label htmlFor="firstName">First Name:</label>
             <input
                 type="text"

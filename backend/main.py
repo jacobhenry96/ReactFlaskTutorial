@@ -8,7 +8,7 @@ def get_contacts():
     json_contacts = list(map(lambda x: x.to_json(), contacts))
     return jsonify({"contacts": json_contacts}), 200
 
-@app.route("/contacts", methods=["POST"])
+@app.route("/create_contact", methods=["POST"])
 def create_contacts():
     first_name  = request.json.get("firstName")
     last_name = request.json.get("lastName")
